@@ -15,6 +15,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "http-proxy": "^1.18.1",
+    "iframe": "^1.0.0",
     "install": "^0.13.0",
     "js-interpreter": "^2.2.0",
     "jsencrypt": "^3.0.0-rc.1",

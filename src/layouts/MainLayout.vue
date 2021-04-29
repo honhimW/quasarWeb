@@ -216,6 +216,7 @@
             <q-tooltip content-class="bg-white text-primary">Close</q-tooltip>
           </q-btn>
         </q-bar>
+        <iframe :src="mdsrc" frameborder="0" width="100%" height="92%" ></iframe>
       </q-card>
     </q-dialog>
     <q-page-container>
@@ -242,6 +243,7 @@ export default {
   },
   data () {
     return {
+      mdsrc: '/httpproxy/md/index',
       createProjectOpt: [
         'New Project',
         'Import Project(Swagger)'
@@ -259,7 +261,7 @@ export default {
       selected: '',
       projectList: [],
       leftDrawerOpen: true,
-      isDark: 'dark',
+      isDark: 'light',
       filter: '',
       customize: [],
       currentNode: {},
@@ -351,14 +353,8 @@ export default {
     },
     openMd () {
       this.mdDL = false
-      var promis
-      promis = Opt.mdStr(this.mdUrl)
-      promis.then(resp => {
-        if (resp.status === 200) {
-          this.showMD = true
-          this.mdString = resp.data
-        }
-      })
+      this.showMD = true
+      this.mdsrc = '/httpproxy/md/index?api=' + btoa(this.mdUrl)
     },
     createProject (item) {
       this.pndl = true
