@@ -74,7 +74,6 @@ function function_name() {
     atob("str") //base64解码
     formatDate() //获取当前时间格式化，默认 YYYYmmddHHMMSS，输入参数则自定义格式化
     timestamp() //获取当前timestamp
-    rsa("str") //rsa加密，signSHA256withRSA加密
     rsawp("str", "privateKey") //rsa加密，传入私钥
     alert("") //浏览器alert()
     log("") //浏览器控制台console.log()
