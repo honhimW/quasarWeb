@@ -1,4 +1,4 @@
-# RequestWeb (quasar-db)
+# RequestWeb
 
 A Quasar Framework app
 
