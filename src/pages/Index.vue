@@ -162,7 +162,11 @@ export default {
         var globalProp = {}
         globalProp.envProp = this.envProp
         globalProp.headers = reqHeader
-        globalProp.body = JSON.stringify(JSON.parse(this.reqBody.code))
+        var finalJsonBody = ''
+        if (this.reqBody.code !== '' || this.reqBody.code !== undefined) {
+          finalJsonBody = JSON.stringify(JSON.parse(this.reqBody.code))
+        }
+        globalProp.body = finalJsonBody
         globalProp = this.userCodeEditHeader(this.javaScriptCode.code, globalProp)
         reqHeader = globalProp.headers
         var header = map2Json(reqHeader)
@@ -192,13 +196,13 @@ export default {
       if (!replaceUrl.startsWith('http://') && !replaceUrl.startsWith('https://')) {
         replaceUrl = this.protocol + replaceUrl
       }
-      // httpDetail(replaceUrl, this.sendMethod, header, JSON.stringify(JSON.parse(this.reqBody.code))).then(resp => {
+      // httpDetail(replaceUrl, this.sendMethod, header, finalJsonBody).then(resp => {
       //   if (resp.status === 200) {
       //     resp.data.body.timing = new Date()
       //     console.log(resp.data.body)
       //   }
       // })
-      post(replaceUrl, this.sendMethod, header, JSON.stringify(JSON.parse(this.reqBody.code))).then(resp => {
+      post(replaceUrl, this.sendMethod, header, finalJsonBody).then(resp => {
         if (resp.status === 200 && resp.data.httpStateCode === 200) {
           if (resp.data.body !== null && resp.data.body !== undefined) {
             this.respBody = {
