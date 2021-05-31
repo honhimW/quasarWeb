@@ -163,7 +163,7 @@ export default {
         globalProp.envProp = this.envProp
         globalProp.headers = reqHeader
         var finalJsonBody = ''
-        if (this.reqBody.code !== '' || this.reqBody.code !== undefined) {
+        if (this.reqBody.code !== '' && this.reqBody.code !== undefined) {
           finalJsonBody = JSON.stringify(JSON.parse(this.reqBody.code))
         }
         globalProp.body = finalJsonBody
