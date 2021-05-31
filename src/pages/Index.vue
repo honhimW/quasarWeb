@@ -103,7 +103,7 @@
 import { debounce } from 'quasar'
 import requestBody from 'src/components/requestBody.vue'
 import requestHeader from 'src/components/requestHeader.vue'
-import { post, httpDetail } from 'src/utils/ajaxSend'
+import { post } from 'src/utils/ajaxSend'
 import { interRun, editHeader } from 'src/utils/interpreter'
 import PreScript from 'src/components/preScript.vue'
 import RespondBody from 'src/components/respondBody.vue'
