@@ -192,12 +192,12 @@ export default {
       if (!replaceUrl.startsWith('http://') && !replaceUrl.startsWith('https://')) {
         replaceUrl = this.protocol + replaceUrl
       }
-      httpDetail(replaceUrl, this.sendMethod, header, JSON.stringify(JSON.parse(this.reqBody.code))).then(resp => {
-        if (resp.status === 200) {
-          resp.data.body.timing = new Date()
-          console.log(resp.data.body)
-        }
-      })
+      // httpDetail(replaceUrl, this.sendMethod, header, JSON.stringify(JSON.parse(this.reqBody.code))).then(resp => {
+      //   if (resp.status === 200) {
+      //     resp.data.body.timing = new Date()
+      //     console.log(resp.data.body)
+      //   }
+      // })
       post(replaceUrl, this.sendMethod, header, JSON.stringify(JSON.parse(this.reqBody.code))).then(resp => {
         if (resp.status === 200 && resp.data.httpStateCode === 200) {
           if (resp.data.body !== null && resp.data.body !== undefined) {
@@ -209,6 +209,7 @@ export default {
               code: JSON.stringify(resp.data, null, 2)
             }
           }
+          console.log(resp.data.httpDetail)
         } else {
           this.respBody = {
             code: JSON.stringify(resp.data, null, 2)
