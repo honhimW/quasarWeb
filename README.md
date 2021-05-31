@@ -1,4 +1,4 @@
-# RequestWeb (quasar-db)
+# RequestWeb
 
 A Quasar Framework app
 
@@ -51,7 +51,7 @@ Esc	//弹出对话框取消
 
 #### 目录
 
-- 点击request会跳转到对应请求，当前请求不保存，需要点击SAVE按钮才会保存
+- 点击request会跳转到对应请求，当前请求改动会提示, SAVE为粉色代表有改动
 
 
 
@@ -74,7 +74,6 @@ function function_name() {
     atob("str") //base64解码
     formatDate() //获取当前时间格式化，默认 YYYYmmddHHMMSS，输入参数则自定义格式化
     timestamp() //获取当前timestamp
-    rsa("str") //rsa加密，signSHA256withRSA加密
     rsawp("str", "privateKey") //rsa加密，传入私钥
     alert("") //浏览器alert()
     log("") //浏览器控制台console.log()
